@@ -2,13 +2,19 @@
 import './App.css'
 import { useLocation, Route, Routes } from 'react-router-dom';
 import { LandingPage, Home, Detail, Form } from './views/indexViews';
+import NavBar from './components/NavBar/NavBar';
 
 
 function App() {
   //const [count, setCount] = useState(0)
 
-  return (
+  const {pathname} = useLocation();
+
+  return ( 
     <div>
+      {
+        pathname !== '/' && <NavBar />
+      }
       <Routes>
         <Route path='/' element={<LandingPage />}/>
         <Route path='/home' element={<Home />}/>

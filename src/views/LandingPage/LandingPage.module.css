@@ -1,0 +1,6 @@
+.image {
+   background-image: url('../../../utils/mapa-PI-Country.jpeg');
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat; 
+}
