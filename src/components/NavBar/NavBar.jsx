@@ -1,20 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
+import css from './NavBar.module.css';
 
 
 function NavBar () {
     return (
-       <nav>
-            <div>
-                <SearchBar />
-            </div>
-            <div>
-                <Link to='/home'>Home</Link>
-            </div>
-        </nav> 
+       <nav className={css.navbar}>
+        
+       </nav>
     )
 };
 
 
 
 export default NavBar;
+            
