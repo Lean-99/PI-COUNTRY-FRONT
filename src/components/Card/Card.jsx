@@ -1,25 +1,13 @@
-import { Link } from "react-router-dom";
-
-
-export default function Card ({ name, flags, id, continents }) {
+export default function Card ({ name, id, platforms, description, released, genres, image }) {
     return (
         <div className="PARA CSS DE LA CARTA">
-            <div className="PARA CSS DEL CONTENIDA">
-                <div>
-                    <img src={flags} alt='flag'/>
-                </div>
-                <div>
-                    <h4>{name}</h4>
-                </div>
-                <div>
-                    <p>{continents}</p>
-                </div>
-                <div>
-                    <Link to={`/countries/${id}`}>
-                        <button className="PARA ESTILO DEL BOTON">Detail</button>
-                    </Link>
-                </div>
-            </div>
+            <h1>NAME: {name}</h1>
+            <h3>ID: {id}</h3>
+            <h3>PLATFORMS: {platforms}</h3>
+            <h3>DESCRIPTION: {description}</h3>
+            <h3>RELEASED: {released}</h3>
+            <h3>GENRES: {genres}</h3>
+            <img src={image} alt="image" />
         </div>
     )
 }; 

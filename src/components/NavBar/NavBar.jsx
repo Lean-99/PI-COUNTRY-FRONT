@@ -13,7 +13,7 @@ function NavBar () {
             <Link to='/home'>Home</Link>
         </div>
         <div>
-            <Link to='/form'>New Activity</Link>
+            <Link to='/form'>New VideoGame</Link>
         </div>
        </nav>
     )

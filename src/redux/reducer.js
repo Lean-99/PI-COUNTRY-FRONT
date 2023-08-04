@@ -1,33 +1,48 @@
 import {
-    ALL_COUNTRIES
+    ALL_GAMES,
+    GAMES_BY_ID
 } from './actions-types'; 
 
 
-
 const initialState = {
-    countries: [],
-    detail: [],
-    allAtivity: []
+    videogames: [],
+    detail: []
 }; 
 
 
 
-const reducer = (state = initialState, action) => {
+function reducer(state = initialState, action)  {
     switch (action.type) {
-        case ALL_COUNTRIES:
+        case ALL_GAMES:
             return {
                 ...state,
-                countries: action.payload,
-                allAtivity: action.payload 
-            }; 
-        default:
-            return {
-                ...state 
+                videogames: action.payload,
+               // detail: action.payload 
             };
-    }
-};
+        case GAMES_BY_ID: 
+            return {
+                ...state,
+                detail: action.payload
+            };
+        default: 
+            return {
+                ...state
+            };
+        }
+    };
+    
 
-
-export default reducer; 
-
-
+export default reducer;  
+    
+    
+    
+    /* case COUNTRY_BY_ID:
+         return {
+             ...state,
+             detail: action.paylod
+         }; 
+     
+     default:
+         return {
+             ...state 
+         };*/

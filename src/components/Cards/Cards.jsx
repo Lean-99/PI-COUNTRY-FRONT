@@ -1,20 +1,17 @@
 import { Link } from "react-router-dom";
 
 
-export default function Cards ({id, name, flags, contient, population, capital, subregion, area}) {
+export default function Cards ({name, image, released}) {
     return (
         <div>
             <div>
-                <img src={flags} alt="flag"/>
-            </div>
-            <div>
+            <Link to='/detail'>
                 <h2>{name}</h2>
+            </Link>
+                <h3>{released}</h3>   
             </div>
             <div>
-                <h3>{contient}</h3>
-            </div>
-            <div>
-                <Link to={`/countries/${id}`}><button>Detail</button></Link>
+                <img src={image} alt="image" />
             </div>
         </div>
     )

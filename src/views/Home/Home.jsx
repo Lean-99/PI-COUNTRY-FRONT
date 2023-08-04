@@ -1,23 +1,40 @@
-import { useSelector, useDispatch } from "react-redux"
-import Cards from "../../components/Cards/Cards";
-import { useEffect, useState } from "react"
-import { allCountries } from "../../redux/actions";
-import css from './Home.module.css';
-
+import { useSelector, useDispatch } from "react-redux"; 
+import Cards from '../../components/Cards/Cards';
+import { useEffect, useState } from "react";
+import { allGames } from "../../redux/actions";
 
 
 export default function Home () {
-    const { countries, allActivity } = useSelector((state) => state); 
+    const { videogames } = useSelector((state) => state);
 
     const dispatch = useDispatch();
     
     useEffect(() => {
-        dispatch(allCountries());
+        dispatch(allGames());
     }, []);
 
-
     return (
-        <div className={css.container}>
+        <div>
+            {
+                videogames?.map(game => {
+                    return(
+                        <div>
+                            <Cards 
+                            name={game.name}
+                            released={game.released}
+                            image={game.image}
+                            />
+                        </div>
+                    )
+                })
+            }
+        </div>
+    )
+}; 
+
+
+/*
+<div className={css.container}>
             {
                 countries.map(ele => {
                     return (
@@ -32,5 +49,4 @@ export default function Home () {
                 })
             }
         </div>
-    )
-};
+*/

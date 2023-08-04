@@ -1,6 +1,8 @@
 .image {
-   background-image: url('../../../utils/mapa-PI-Country.jpeg');
+   background-image: url('../../../utils/186586-juegos-gratis-divertidos-jugar-tu-navegador.webp');
+   margin: 0;
+   padding: 0;
    background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat; 
+   background-repeat: no-repeat;
+   background-position: center center;
 }
