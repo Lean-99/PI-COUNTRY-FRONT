@@ -1,12 +1,35 @@
-function Search () {
+import React from 'react'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { gameByName  } from "../../redux/actions"; 
+
+
+export default function SearchBar() {
+    const dispatch = useDispatch();
+    const [searchName, setsearchName] = useState(''); 
+    
+
+    const handleInputChange = (event) => {
+        event.preventDefault()
+        setsearchName(event.target.value); 
+    }; 
+     
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        dispatch(gameByName(searchName));  
+    };
+     
     return (
         <div>
-            <input className="" type="search" name="search" placeholder="Search VideoGames"/>
-            <button className="">Search</button>
+            <input
+            type='text'
+            placeholder='Search Videogames...'
+            onChange={handleInputChange}
+            />
+
+            <button type='submit' onClick={handleSubmit}>Search</button>
         </div>
     )
 };
 
-
-
-export default Search;
+//import { gameByName, allGames } from "../../redux/actions"; 

@@ -7,7 +7,7 @@ import NavBar from './components/NavBar/NavBar';
 
 function App() {
   
-
+  
   //const {pathname} = useLocation();
   
   return ( 
@@ -25,6 +25,3 @@ export default App
 
 ///prueba para gitHub
 // prueba par gitHub 2 
-/*{
-  pathname !== '/' && <NavBar />
-}*/

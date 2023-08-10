@@ -1,5 +1,5 @@
 import axios from 'axios'; 
-import { ALL_GAMES, GAMES_BY_ID } from "./actions-types";
+import { ALL_GAMES, GAMES_BY_ID, GAME_BY_NAME } from "./actions-types";
 
 const URL = 'http://localhost:3001';
 
@@ -26,9 +26,8 @@ export function gameById (id) {
         try {
             const response = (await axios.get(`${URL}/videogames/${id}`)).data;
             const game = response 
-            
             const gameArray = [game]; 
-            console.log('DATA', gameArray);
+           
             return dispatch({
                 type: GAMES_BY_ID,
                 payload: gameArray 
@@ -39,22 +38,20 @@ export function gameById (id) {
     }       
 };
 
-
-
-
-
-
-
-
-
-
-/*export function countryById (id) {
+export function gameByName (name) {
     return async (dispatch) => {
-        await axios.get(`${URL}/countries/${id}`).then((result) => {
+        try {
+            const response = (await axios.get(`${URL}/videogames?name=${name}`)).data;
+            console.log('DATA',response);
+
             return dispatch({
-                type: COUNTRY_BY_ID,
-                payload: result.data
+                type: GAME_BY_NAME,
+                payload: response 
             });
-        });
-    };
-};*/
+
+        } catch (error) {
+            console.log({error: error.message});
+        }
+    }; 
+};
+

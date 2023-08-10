@@ -1,5 +1,4 @@
 .navbar {
-    background-color: aqua;
     height: 50px;
     position: fixed;
     top: 0;
@@ -8,7 +7,6 @@
 }
 
 .search {
-    background-color: blue;
     height: 50px;
     position: fixed;
     top: 0; 

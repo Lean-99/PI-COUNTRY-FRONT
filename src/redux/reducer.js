@@ -1,11 +1,13 @@
 import {
     ALL_GAMES,
-    GAMES_BY_ID
+    GAMES_BY_ID,
+    GAME_BY_NAME
 } from './actions-types'; 
 
 
 const initialState = {
     videogames: [],
+    game: [],
     detail: []
 }; 
 
@@ -24,6 +26,11 @@ function reducer(state = initialState, action)  {
                 ...state,
                 detail: action.payload
             };
+        case GAME_BY_NAME:
+            return {
+                ...state,
+                game: action.payload
+            }
         default: 
             return {
                 ...state

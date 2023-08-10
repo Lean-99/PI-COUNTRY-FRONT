@@ -1,25 +1,35 @@
 import { useSelector, useDispatch } from "react-redux"; 
 import Cards from '../../components/Cards/Cards';
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { allGames } from "../../redux/actions";
+import { useLocation } from "react-router-dom";
+import NavBar from "../../components/NavBar/NavBar";
+import css from './Home.module.css'
+
 
 
 export default function Home () {
-    const { videogames } = useSelector((state) => state);
-
+    const pathname = useLocation(); 
+    const { videogames, game } = useSelector((state) => state);
     const dispatch = useDispatch();
     
     useEffect(() => {
         dispatch(allGames());
     }, []);
 
+    const gameToRender = game.length > 0 ? game : videogames;
+
     return (
-        <div>
+        <div className={css.home}>
+            <div> 
+                {pathname !== '/' && <NavBar />} 
+            </div>
             {
-                videogames?.map(game => {
+                gameToRender?.map(game => {
                     return(
                         <div>
                             <Cards 
+                            id={game.id}
                             name={game.name}
                             released={game.released}
                             image={game.image}

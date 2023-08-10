@@ -1,0 +1,22 @@
+.card {
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 7px;
+    width: 10cm;
+    
+}
+
+.image {
+    height: 5cm;
+    border-radius: 2%;
+}
+
+.name {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.released {
+    font-size: 0.9rem;
+}

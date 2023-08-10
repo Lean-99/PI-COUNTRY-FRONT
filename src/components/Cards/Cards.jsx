@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
+import css from './Cards.module.css'; 
 
-
-export default function Cards ({name, image, released}) {
+export default function Cards ({id, name, image, released}) {
     return (
-        <div>
+        <div className={css.card}>
             <div>
-            <Link to='/detail'>
-                <h2>{name}</h2>
+            <Link to={`/detail/${id}`}>
+                <h2 className={css.name}>{name}</h2>
             </Link>
-                <h3>{released}</h3>   
+                <h3 className={css.released}>{released}</h3>   
             </div>
             <div>
-                <img src={image} alt="image" />
+                <img className={css.image} src={image} alt="image" />
             </div>
         </div>
     )

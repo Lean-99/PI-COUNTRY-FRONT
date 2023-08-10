@@ -8,22 +8,22 @@ import Card from "../../components/Card/Card";
 function Detail () {
     const { detail } = useSelector((state) => state);
     const { id } = useParams();
+    console.log('ID', id);
     const dispatch = useDispatch();
     
     useEffect(() => {
         dispatch(gameById(id)); 
-    }, []);  
+    }, [id, dispatch]);  
 
     return (
         <div>
             {
                 detail?.map(game => {
                     return (
-                        <div>
+                        <div key={game.id}>
                             <Card 
                             name={game.name}
                             id={game.id}
-                            
                             description={game.description}
                             released={game.released}
                             image={game.image}
